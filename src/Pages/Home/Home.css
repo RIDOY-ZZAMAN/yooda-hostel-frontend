@@ -1,0 +1,17 @@
+h1{
+    color:blue;
+    font-weight: bold;
+}
+h2{
+    color:red;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    height: 60px;
+    width: 250px;
+    
+}
