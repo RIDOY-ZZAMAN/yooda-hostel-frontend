@@ -11,7 +11,7 @@ const ProductDetails = () => {
     const descriptionRef = useRef();
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://shrouded-gorge-65021.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -31,7 +31,7 @@ const ProductDetails = () => {
         const description = descriptionRef.current.value;
         const detailsChanging = { productName, price, description };
         console.log(detailsChanging, id);
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://shrouded-gorge-65021.herokuapp.com/products/${id}`;
         const newDetails = productDetails.find(product => product._id === id);
         newDetails.ProductName = productName;
         newDetails.Price = price;

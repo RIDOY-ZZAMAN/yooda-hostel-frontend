@@ -11,7 +11,7 @@ const StudentDetails = () => {
     const studentHallNameRef = useRef();
     const { studentId } = useParams();
     useEffect(() => {
-        fetch('http://localhost:5000/students')
+        fetch('https://shrouded-gorge-65021.herokuapp.com/students')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -32,7 +32,7 @@ const StudentDetails = () => {
         const studentHallName = studentHallNameRef.current.value;
         const detailsChanging = { studentName, studentRoll, studentAge, studentHallName };
         console.log(detailsChanging, id);
-        const url = `http://localhost:5000/students/${id}`;
+        const url = `https://shrouded-gorge-65021.herokuapp.com/students/${id}`;
         const newDetails = studentDetails.find(student => student._id === id);
         newDetails.FullName = studentName;
         newDetails.Roll = studentRoll;

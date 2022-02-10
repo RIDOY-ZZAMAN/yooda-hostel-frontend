@@ -9,7 +9,7 @@ const AddProducts = () => {
 
     const size = 5;
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${page}&&size=${size}`)
+        fetch(`https://shrouded-gorge-65021.herokuapp.com/products?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products);
@@ -23,7 +23,7 @@ const AddProducts = () => {
     const handleProductSubmit = (e) => {
         e.preventDefault();
         console.log("This is the New Products", product)
-        fetch('http://localhost:5000/products', {
+        fetch('https://shrouded-gorge-65021.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const AddProducts = () => {
 
     }
     const handleDeleteProduct = (id) => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://shrouded-gorge-65021.herokuapp.com/products/${id}`;
         const proceed = window.confirm("Are You Sure, You want to Delete this Product?")
         if (proceed) {
             fetch(url, {

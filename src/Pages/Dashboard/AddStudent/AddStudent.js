@@ -23,7 +23,7 @@ const AddStudent = () => {
 
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     useEffect(() => {
-        fetch(`http://localhost:5000/students?page=${page}&&size=${size}`)
+        fetch(`https://shrouded-gorge-65021.herokuapp.com/students?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setStudents(data.students);
@@ -38,7 +38,7 @@ const AddStudent = () => {
     const handleStudentSubmit = (e) => {
         e.preventDefault();
         console.log("This new Student", student)
-        fetch('http://localhost:5000/students', {
+        fetch('https://shrouded-gorge-65021.herokuapp.com/students', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -66,7 +66,7 @@ const AddStudent = () => {
     }
 
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/students/${id}`;
+        const url = `https://shrouded-gorge-65021.herokuapp.com/students/${id}`;
         const proceed = window.confirm("Are You Sure, You want to Delete this Student?")
         if (proceed) {
             fetch(url, {
