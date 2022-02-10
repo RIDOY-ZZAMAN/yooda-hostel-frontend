@@ -34,6 +34,7 @@ const AddProducts = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
+                    window.location.reload(true);
                     alert("Food Item Inserted Successfully");
                     e.target.reset();
                 }
@@ -61,6 +62,7 @@ const AddProducts = () => {
                     if (data.deletedCount > 0) {
                         const remainingProducts = products.filter(product => product._id !== id);
                         setProducts(remainingProducts);
+
                         alert("Product Deleted Successfully");
                     }
                 })
@@ -81,7 +83,7 @@ const AddProducts = () => {
                 <Grid item xs={12} md={7} sx={{ textAlign: "start", }} >
 
                     <form onSubmit={handleProductSubmit}>
-                        <TextField
+                        {/* <TextField
                             sx={{
                                 width: '75%',
                                 m: 1
@@ -91,7 +93,7 @@ const AddProducts = () => {
                             name="imgUrl"
                             onBlur={handleOnBlur}
                             variant="standard"
-                        />
+                        /> */}
                         <TextField
                             sx={{
                                 width: '75%',

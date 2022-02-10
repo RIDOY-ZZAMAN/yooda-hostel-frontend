@@ -49,6 +49,7 @@ const AddStudent = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
+                    window.location.reload(true);
                     alert("Student Data Inserted Successfully");
                     e.target.reset();
                 }
